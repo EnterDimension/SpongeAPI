@@ -30,6 +30,7 @@ import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.EntitySnapshot;
 import org.spongepowered.api.entity.EntityType;
 import com.flowpowered.math.vector.Vector3d;
+import org.spongepowered.api.service.persistence.data.DataContainer;
 
 import java.util.Collection;
 
@@ -68,4 +69,11 @@ public interface EntityUniverse {
      */
     Optional<Entity> createEntity(EntitySnapshot snapshot, Vector3d position);
 
+    /**
+     * Create an entity instance at the given position.
+     *
+     * @param entityContainer The data container of the entity
+     * @return An entity, if one was created
+     */
+    Optional<Entity> createEntity(DataContainer entityContainer);
 }

@@ -30,6 +30,7 @@ import org.spongepowered.api.effect.Viewer;
 import org.spongepowered.api.entity.Entity;
 import com.flowpowered.math.vector.Vector2i;
 import org.spongepowered.api.world.extent.Extent;
+import org.spongepowered.api.world.storage.WorldStorage;
 import org.spongepowered.api.world.weather.WeatherVolume;
 
 import java.util.Collection;
@@ -132,5 +133,11 @@ public interface World extends Extent, Viewer, WeatherVolume {
      * @return A collection of GameRules.
      */
     Map<String, String> getGameRules();
-    
+
+    /**
+     * Gets the associated {@link WorldStorage} persisting this world.
+     *
+     * @return The associated world storage
+     */
+    WorldStorage getWorldStorage();
 }
